@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('',index,name="Home"),
+    path('buscar/',buscar,name="buscar"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL , document_root= settings.MEDIA_ROOT)

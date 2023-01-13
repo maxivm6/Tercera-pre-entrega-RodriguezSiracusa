@@ -6,6 +6,8 @@ class Producto(models.Model):
     nombre = models.CharField(max_length=20)
     descripcion = models.CharField(max_length=300)
     precio = models.IntegerField()
+    stock = models.IntegerField()
+    
     
     def __str__(self): return self.nombre
     

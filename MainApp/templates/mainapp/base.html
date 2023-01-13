@@ -23,16 +23,16 @@
                           Menu
                         </a>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Agregar Producto</a></li>
+                          <li><a class="dropdown-item" href="{% url 'Producto' %}">Agregar Producto</a></li>
                           <li><a class="dropdown-item" href="{% url 'Formulario' %}">Agregar Cliente</a></li>
                           <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">Agregar Empleado</a></li>
+                          <li><a class="dropdown-item" href="{% url 'Empleado' %}">Agregar Empleado</a></li>
                         </ul>
                       </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                      <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                      <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    <form class="d-flex" role="search" action="buscar" method="get">
+                      <input name="busqueda" class="form-control me-2" type="search" placeholder="Buscar Producto" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit" >Buscar</button>
                     </form>
                   </div>
                 </div>

@@ -1,0 +1,29 @@
+{% extends 'mainapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    {% if productos %}
+        <h4 style="color: rgb(100, 21, 21); text-align: center; margin: 5em auto;">Productos encontrados:</h4>
+
+            <div class="row bg-info">
+                <div class="col-3">
+                
+                    {% for p in productos %}
+                        <p style="color: black">{{p.nombre}} {{p.precio}}</p>
+                    {% endfor %}
+                
+                </div>
+            </div>   
+
+
+    {% else %}
+
+        <h4 style="color: rgb(100, 21, 21); text-align: center; margin: 5em auto;">Producto no Encontrado</h4>
+
+
+    {% endif %}
+
+
+{% endblock %}
