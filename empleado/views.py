@@ -4,7 +4,7 @@ from .forms import FormEmpleado
 
 # Create your views here.
 def empleado_formulario(request):
-    formulario = FormEmpleado(request.POST)
+    formulario = FormEmpleado(request.POST or None)
     if request.method == 'POST':
         
         

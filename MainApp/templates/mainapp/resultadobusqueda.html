@@ -5,22 +5,48 @@
 {% block content %}
 
     {% if productos %}
-        <h4 style="color: rgb(100, 21, 21); text-align: center; margin: 5em auto;">Productos encontrados:</h4>
+    
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <p style="color: rgb(255, 255, 255); font-size: 4em; font-weight:100;">Productos Encontrados</p>
+        </div>
+    </div>
 
-            <div class="row bg-info">
-                <div class="col-3">
-                
-                    {% for p in productos %}
-                        <p style="color: black">{{p.nombre}} {{p.precio}}</p>
-                    {% endfor %}
-                
-                </div>
-            </div>   
+    <div class="container">
+        <div class="row justify-content-center pt-5" >
+            <div class="col-4 justify-content-center" style="border: solid 1.5px; border-radius: 7px; background-color: rgb(255, 255, 255,0.2);">
+                <table class="table text-start" style="color: rgb(255, 255, 255); font-weight: 400;">
+                    <thead>
+                        <tr>
+                          <th scope="col">Producto</th>
+                          <th scope="col">Precio</th>
+                          <th class="text-center" scope="col">Stock</th>
+                        </tr>    
+                    </thead>
+                    <tbody>
+                        
+                            {% for p in productos %}
+                            <tr>
+                                <th style="font-weight: 400;">{{p.nombre}}</th>
+                                <td>${{p.precio}}</td>
+                                <td class="text-center">{{p.stock}}</td>
+                            </tr>
+                            {% endfor %}
+                    </tbody>
+                </table>
+                                  
+            </div>
+        </div>
+    </div>   
 
 
     {% else %}
 
-        <h4 style="color: rgb(100, 21, 21); text-align: center; margin: 5em auto;">Producto no Encontrado</h4>
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <p style="color: rgb(255, 255, 255); font-size: 3em; font-weight:100;">Producto No Encontrado</p>
+        </div>
+    </div>
 
 
     {% endif %}

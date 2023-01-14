@@ -4,7 +4,7 @@ from .forms import FormProducto
 
 # Create your views here.
 def producto_formulario(request):
-    formulario = FormProducto(request.POST)
+    formulario = FormProducto(request.POST or None)
     if request.method == 'POST':
         
         
